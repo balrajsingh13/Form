@@ -1,0 +1,53 @@
+<html>
+ <body> 
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input id="first_name" placeholder="first_name" formControlName="first_name" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('first_name').valid && loginForm.get('first_name').touched">Enter Valid first_name</span>
+
+    <div class="form-group">
+      <input id="last_name" placeholder="last_name" formControlName="last_name" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('last_name').valid && loginForm.get('last_name').touched">Enter Valid last_name</span>
+
+    <div class="form-group">
+      <input id="email" placeholder="email" formControlName="email" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Enter Valid email</span>
+
+    <div class="form-group">
+      <input id="contact_number" placeholder="contact_number" formControlName="contact_number" class="form-control" maxlength="10">
+    </div>
+    <span *ngIf="!loginForm.get('contact_number').valid && loginForm.get('contact_number').touched">Enter Valid contact_number</span>
+
+    <div class="form-group">
+      <input id="gender" placeholder="gender" formControlName="gender" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('gender').valid && loginForm.get('gender').touched">Enter Valid gender</span>
+
+    <div class="form-group">
+      <input id="employee_id" placeholder="employee_id" formControlName="employee_id" class="form-control" maxlength="4">
+    </div>
+    <span *ngIf="!loginForm.get('employee_id').valid && loginForm.get('employee_id').touched">Enter Valid employee_id</span>
+    
+    <div class="form-group">
+      <input type={{textBodyType}} id="password" placeholder="password" formControlName="password" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter Valid password</span>
+    <img id="asterik" src="http://www.txt.ca/wp-content/uploads/2015/06/icon_info_lg2.png" (mousedown)="show()" (mouseup)= "hide()">
+
+    <div class="form-group">
+      <input id="confirm_password" placeholder="confirm_password" formControlName="confirm_password" class="form-control">
+    </div>
+    <span *ngIf="!loginForm.get('confirm_password').valid && loginForm.get('confirm_password').touched"></span>
+
+    <div class="form-group">
+      <button id="submit_button" type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+</body>
+</html>
