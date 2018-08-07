@@ -1,0 +1,38 @@
+<table>
+  <thead>
+    <th>Key</th>
+    <th>Value</th>
+  </thead>
+  <tr>
+    <td>FirstName</td>
+    <td>{{data.firstname}}</td>
+  </tr>
+  <tr>
+    <td>LastName</td>
+    <td>{{data.lastname}}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{data.email}}</td>
+  </tr>
+  <tr>
+    <td>ContNo.</td>
+    <td>{{data.contactnumber}}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{data.gender}}</td>
+  </tr>
+  <tr>
+    <td>EmpId</td>
+    <td>{{data.employeeid}}</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>{{data.password}}</td>
+  </tr>
+</table>
+
+<button type="button" (click)= "onclick()">Back & edit</button>
+
+<button type="button" (click)="reset()">Reset</button>

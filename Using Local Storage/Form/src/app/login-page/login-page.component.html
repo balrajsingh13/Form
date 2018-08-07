@@ -33,18 +33,19 @@
     <span *ngIf="!loginForm.get('employee_id').valid && loginForm.get('employee_id').touched">Enter Valid employee_id</span>
     
     <div class="form-group">
-      <input type={{textBodyType}} id="password" placeholder="password" formControlName="password" class="form-control">
+      <input id="password" [type]="textBoxType" placeholder="password" formControlName="password" class="form-control">
     </div>
     <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter Valid password</span>
-    <img id="asterik" src="http://www.txt.ca/wp-content/uploads/2015/06/icon_info_lg2.png" (mousedown)="show()" (mouseup)= "hide()">
+    <img id="asterik" src="http://www.txt.ca/wp-content/uploads/2015/06/icon_info_lg2.png" (mousedown)="show()" (mouseup)="hide()">
+    <p>{{ password_checker }}</p>
 
     <div class="form-group">
-      <input id="confirm_password" placeholder="confirm_password" formControlName="confirm_password" class="form-control">
+      <input id="confirm_password" [type]="textBoxType" placeholder="confirm_password" formControlName="confirm_password" class="form-control">
     </div>
     <span *ngIf="!loginForm.get('confirm_password').valid && loginForm.get('confirm_password').touched"></span>
 
     <div class="form-group">
-      <button id="submit_button" type="submit">Submit</button>
+      <button id="submit_button" type="submit" (ngSubmit)="onSubmit()">Submit</button>
     </div>
 
   </form>

@@ -1,0 +1,58 @@
+<html>
+
+<body>
+  <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input id="first_name" placeholder="first_name" formControlName="firstname" class="form-control">
+      </div>
+      <span *ngIf="!loginForm.get('firstname').valid && loginForm.get('firstname').touched">Enter Valid first_name</span>
+
+      <div class="form-group">
+        <input id="last_name" placeholder="last_name" formControlName="lastname" class="form-control">
+      </div>
+      <span *ngIf="!loginForm.get('lastname').valid && loginForm.get('lastname').touched">Enter Valid last_name</span>
+
+      <div class="form-group">
+        <input id="email" placeholder="email" formControlName="email" class="form-control">
+      </div>
+      <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Enter Valid email</span>
+
+      <div class="form-group">
+        <input id="contact_number" placeholder="contact_number" formControlName="contactnumber" class="form-control" maxlength="10">
+      </div>
+      <span *ngIf="!loginForm.get('contactnumber').valid && loginForm.get('contactnumber').touched">Enter Valid contact_number</span>
+
+
+      <div class="radio" *ngFor="let gender of genders">
+        <label>
+          <input type="radio" [value]="gender" formControlName="gender">{{gender}}
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input id="employee_id" placeholder="employee_id" formControlName="employeeid" class="form-control" maxlength="4">
+      </div>
+      <span *ngIf="!loginForm.get('employeeid').valid && loginForm.get('employeeid').touched">Enter Valid employee_id</span>
+
+      <div class="form-group">
+        <input name="abc" #referenceVariableA id="password" [type]="textBoxType" placeholder="password" formControlName="password" class="form-control">
+      </div>
+      <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter Valid password</span>
+      <img id="asterik" src="http://www.txt.ca/wp-content/uploads/2015/06/icon_info_lg2.png" (mousedown)="show()" (mouseup)="hide()">
+      <p>{{ password_checker }}</p>
+
+      <div class="form-group">
+        <input name="def" #referenceVariableB id="confirm_password" [type]="textBoxType" placeholder="confirm_password" formControlName="confirmpassword" class="form-control">
+      </div>
+      <span *ngIf="loginForm.get('confirmpassword').touched &&  referenceVariableA.value !== referenceVariableB.value">Enter Same password</span>
+
+      <div class="form-group">
+        <button id="submit_button" [disabled]="!loginForm.valid || referenceVariableA.value !== referenceVariableB.value" type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>

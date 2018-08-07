@@ -1,0 +1,10 @@
+#first_name,#last_name,#email,#contact_number,#employee_id,#password,#confirm_password,#submit_button,#gender{
+    position: relative;
+    left: 450px;
+    top: 100px;
+    margin: 30px;
+}
+
+input.ng-invalid{
+    border: 1px solid red;
+}

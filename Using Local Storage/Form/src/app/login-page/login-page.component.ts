@@ -11,6 +11,13 @@ export class LoginPageComponent implements OnInit{
   title = 'form';
   loginForm: FormGroup;
   textBoxType = "password";
+  passwrd: String;
+  password_checker: String;
+  password_confirm: String;
+  // passwrd_length: Number;
+  // hide_show = true;
+  // asterik_array: any[] = [];
+  // star: any;
 
   constructor(private route:Router) {
 
@@ -43,5 +50,8 @@ export class LoginPageComponent implements OnInit{
   hide(){
     this.textBoxType = "password";
   }
+
+ 
+
 }
 
